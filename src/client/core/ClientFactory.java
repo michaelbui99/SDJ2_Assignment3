@@ -7,7 +7,6 @@ public class ClientFactory {
 
     private Client client;
 
-//comment
 
     public Client getClient()
     {
