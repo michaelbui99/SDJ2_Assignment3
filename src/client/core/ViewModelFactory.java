@@ -4,6 +4,8 @@ import client.view.chatroom.ChatRoomVM;
 import client.view.clinetswindow.ClientsVM;
 import client.view.usernamewindow.UserNameVM;
 
+import java.rmi.RemoteException;
+
 public class ViewModelFactory {
 
     private ChatRoomVM chatRoomViewVM;

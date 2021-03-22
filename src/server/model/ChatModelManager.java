@@ -1,7 +1,6 @@
 package server.model;
 
 import server.MessageList;
-import server.network.ServerSocketHandler;
 import shared.Message;
 
 import java.beans.PropertyChangeListener;
@@ -39,16 +38,6 @@ public class ChatModelManager implements ChatModel
     return pool.getUsers();
   }
 
-
-  @Override public void addHandler(ServerSocketHandler handler)
-  {
-    pool.addHandler(handler);
-  }
-
-  @Override public void removeHandler(ServerSocketHandler handler)
-  {
-    pool.removeHandler(handler);
-  }
 
   @Override public void addPropertyChangeListener(String name,
       PropertyChangeListener listener)

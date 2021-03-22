@@ -17,8 +17,4 @@ public class MessageList
   {
     messages.add(msg);
   }
-  public void bla()
-  {
-
-  }
 }

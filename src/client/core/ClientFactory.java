@@ -1,7 +1,9 @@
 package client.core;
 
 import client.network.Client;
-import client.network.ClientSocket;
+import client.network.RMIClientChat;
+
+import java.rmi.RemoteException;
 
 public class ClientFactory {
 
@@ -13,7 +15,7 @@ public class ClientFactory {
     {
         if (client == null)
         {
-            client = new ClientSocket();
+                client = new RMIClientChat();
         }
         return client;
     }

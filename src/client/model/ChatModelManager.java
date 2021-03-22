@@ -1,12 +1,12 @@
 package client.model;
 
 import client.network.Client;
-import client.network.ClientSocket;
-import shared.Message;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
 import java.util.List;
 
 public class ChatModelManager implements ChatModel
@@ -18,13 +18,27 @@ public class ChatModelManager implements ChatModel
   {
     this.client = client;
     support = new PropertyChangeSupport(this);
-    client.startClient();
+    try
+    {
+      client.startClient();
+    }
+    catch (RemoteException | NotBoundException e)
+    {
+      e.printStackTrace();
+    }
     client.addPropertyChangeListener("SendMessage", (evt)->support.firePropertyChange(evt));
   }
 
   @Override public void sendMessage(String msg)
   {
-    client.sendMessage(msg);
+    try
+    {
+      client.sendMessage(msg);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   @Override public List<String> getConnectedUsers()

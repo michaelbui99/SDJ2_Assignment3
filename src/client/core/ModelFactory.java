@@ -4,6 +4,8 @@ import client.model.ChatModel;
 import client.model.ChatModelManager;
 import client.network.Client;
 
+import java.rmi.RemoteException;
+
 public class ModelFactory {
 
     private ChatModel chatModel;
