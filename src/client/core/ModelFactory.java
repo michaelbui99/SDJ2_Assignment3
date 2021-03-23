@@ -11,7 +11,7 @@ public class ModelFactory {
     private ChatModel chatModel;
     private ClientFactory clientFactory = new ClientFactory();
 
-    public ModelFactory(Client client)
+    public ModelFactory()
     {
 
     }

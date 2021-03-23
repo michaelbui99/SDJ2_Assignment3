@@ -15,5 +15,6 @@ public class RunServer
     ChatModel model = new ChatModelManager();
     RMIServer server = new RMIServerImplChat(model);
     server.startServer();
+    System.out.println("Server starts...");
   }
 }

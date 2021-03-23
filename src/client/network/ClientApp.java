@@ -13,7 +13,7 @@ public class ClientApp extends Application
   @Override public void start(Stage stage) throws Exception
   {
     ClientFactory cf = new ClientFactory();
-    ModelFactory mf = new ModelFactory(cf.getClient());
+    ModelFactory mf = new ModelFactory();
     ViewModelFactory viewModelFactory = new ViewModelFactory(mf);
     ViewHandler viewHandler = new ViewHandler(stage, viewModelFactory);
     viewHandler.start(stage);
