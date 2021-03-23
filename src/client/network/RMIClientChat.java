@@ -42,6 +42,7 @@ public class RMIClientChat implements Client, ClientCallback
     {
       registry = LocateRegistry.getRegistry(1099);
       server = (RMIServer) registry.lookup(Util.SERVERNAME);
+      server.registerCallback(this);
     }
     catch (RemoteException | NotBoundException e)
     {
@@ -84,7 +85,14 @@ public class RMIClientChat implements Client, ClientCallback
     userName = name;
     this.oldName = oldName;
     String s = oldName +","+name;
-   server.adduser(s);
+    try
+    {
+      server.adduser(s);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
   }
 
   @Override public void addPropertyChangeListener(String name,

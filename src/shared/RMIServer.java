@@ -12,5 +12,5 @@ public interface RMIServer extends Remote
   void  sendMessage(String msg, String userName) throws RemoteException;
   List<String> getConnectedUsers()throws RemoteException;
   void registerCallback(ClientCallback ccb)throws RemoteException;
-  void adduser(String user);
+  void adduser(String user) throws RemoteException;
 }
