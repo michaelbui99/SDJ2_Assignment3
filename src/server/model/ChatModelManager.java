@@ -1,6 +1,5 @@
 package server.model;
 
-import server.MessageList;
 import shared.Message;
 
 import java.beans.PropertyChangeListener;
@@ -9,21 +8,18 @@ import java.util.List;
 
 public class ChatModelManager implements ChatModel
 {
-  private MessageList messageList;
   private PropertyChangeSupport support;
   private ConnectionPool pool;
 
   public ChatModelManager()
   {
     support = new PropertyChangeSupport(this);
-    messageList = new MessageList();
     pool = new ConnectionPool();
   }
 
   @Override public void sendMessage(Message msg)
   {
     support.firePropertyChange("SendMessage" , null, msg);
-    messageList.addMessage(msg);
   }
 
   @Override public void addConnectedUser(String user)
