@@ -50,7 +50,7 @@ public class RMIServerImplChat implements RMIServer
       {
         try
         {
-          ccb.sendMessage((Message) evt.getNewValue());
+          ccb.sendMessageCallback((Message) evt.getNewValue());
         }
         catch (RemoteException e)
         {

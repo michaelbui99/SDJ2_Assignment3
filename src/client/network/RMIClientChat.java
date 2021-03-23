@@ -120,7 +120,7 @@ public class RMIClientChat implements Client, ClientCallback
    support.removePropertyChangeListener(listener);
   }
 
-  @Override public void sendMessage(Message msg)
+  @Override public void sendMessageCallback(Message msg)
   {
     support.firePropertyChange("SendMessage", null, msg);
   }
